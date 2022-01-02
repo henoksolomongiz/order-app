@@ -52,8 +52,11 @@ const AddOrder: FC<IAddOrderProps> = ({ addOrder, availableOrderTime }) => {
           handleTime(evt);
         }}
       >
+        <option selected disabled>Select Time</option>
         {availableOrderTime.map((time, index) => (
-          <option key={index} value={time}>{time}</option>
+          <option key={index} value={time}>
+            {time}
+          </option>
         ))}
       </select>
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Order } from "../model/Order";
+import orderService from "../service/order.service";
 
 type OrderState = (initialOrders: Order[], intialTime: any[]) => IOrderState;
 
@@ -29,12 +30,42 @@ const useOrderState: OrderState = (
       if (!window.localStorage) {
         return;
       }
-      const storedOrderStr = window.localStorage.getItem("app.orders");
-      if (storedOrderStr === null || storedOrderStr.length < 1) {
-        return;
-      }
-      setOrders(JSON.parse(storedOrderStr));
-      return orders;
+      orderService
+        .getAll()
+        .then((response: any) => {
+          setOrders(JSON.parse(response.data));
+          window.localStorage.setItem("app.orders", JSON.parse(response.data));
+        })
+        .catch((e: Error) => {
+          const storedOrderStr = [
+            {
+              date: "2021-11-29",
+              time: "10:30",
+              orderId: "123",
+              customerId: "a-111",
+            },
+            {
+              date: "2021-11-29",
+              time: "10:30",
+              orderId: "223",
+              customerId: "a-211",
+            },
+            {
+              date: "2021-11-29",
+              time: "12:30",
+              orderId: "323",
+              customerId: "a-211",
+            },
+            {
+              date: "2021-11-29",
+              time: "18:30",
+              orderId: "423",
+              customerId: "a-411",
+            },
+          ];
+
+          setOrders(storedOrderStr);
+        });
     },
     getAvailableOrderTime: (orders) => {
       var times = [];
