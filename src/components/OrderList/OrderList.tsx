@@ -1,12 +1,12 @@
 import React, { FC, useEffect } from "react";
 
 import { Order as OrderModel } from "../../model/Order";
+import { AddOrder } from "../AddOrder/AddOrder";
 import { Order } from "../Order/Order";
 
 import "./OrderList.css";
 
 export interface IOrderListProps {
-  addOrder: (order: OrderModel) => void;
   orders: OrderModel[];
 }
 
@@ -14,13 +14,17 @@ const OrderList: FC<IOrderListProps> = ({ orders }) => {
   useEffect(() => {}, []);
 
   return (
-    <div className="order-list">
-      <h1>Orders</h1>
+    <div>
+      <div className="items-head">
+        <p>Orders</p>
+      </div>
       {orders.length > 0 ? (
         <React.Fragment>
-          {orders.map((order, index) => (
-            <Order key={index} order={order} />
-          ))}
+          <div className="items-body">
+            {orders.map((order, index) => (
+              <Order key={index} order={order} />
+            ))}
+          </div>
         </React.Fragment>
       ) : (
         <div className="empty-msg">No orders </div>

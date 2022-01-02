@@ -1,1 +1,27 @@
  
+.items-body-content {
+    padding: 10px;
+    padding-right: 0px;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    background-color: #b2d4df;
+    font-size: 13px;
+    grid-gap: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    
+  }
+  
+  .items-body-content:hover {
+    border-radius: 15px;
+    border: 1px solid #0B5AA2;
+  }
+  
+  .items-body-content i {
+    align-self: center;
+    font-size: 15px;
+    color: #0B5AA2;
+    font-weight: bold;
+    animation: icon 1.5s infinite forwards;
+  }
+  

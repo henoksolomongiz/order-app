@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 0;
+  padding: 10px;
+  height: 50px;
+  background-color: #f2f0ee;
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  border-right: 1px solid #555;
+  min-width: 320px;
+}
+
+.form-inline button.order-form--submit {
+  padding: 10px 30px;
+  background-color: #0d76bd;
+  border: 1px solid #24111d;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  height: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.form-inline button:hover {
+  background-color: #4e39c7;
+}
+
+@media (max-width: 1085px) {
+  .form-inline input,
+  .form-inline select,
+  .form-inline button{
+    margin: 10px 0;
+    border-right: 0 !important;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+select.soflow,
+select.soflow-color {
+  -webkit-appearance: button;
+  -webkit-border-radius: 0px; 
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  background-color: #f2f0ee;
+  font-family: "Montserrat", sans-serif;
+  height: 50px;
+  color: #555;
+  font-size: 16px;
+  border-right: 1px solid #555;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  overflow: hidden;
+  text-align-last: center;
+  padding: 5px 10px;
+  white-space: nowrap;
+  min-width: 320px;
+}

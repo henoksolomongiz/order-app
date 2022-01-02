@@ -10,9 +10,9 @@ export interface IOrderProps {
 
 const Order: FC<IOrderProps> = ({ order }) => {
   return (
-    <div>
-      <p className="orderId">{order.orderId}</p>
-      <div className="time">{order.time}</div>
+    <div className="items-body-content">
+      <span>{order.customerId}</span>
+      <i className="fa fa-angle-right">{order.time}</i>
     </div>
   );
 };

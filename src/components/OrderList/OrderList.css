@@ -1,10 +1,38 @@
-.order-list {
-	display: grid;
-	grid-auto-rows: auto;
-	grid-gap: .5em;
-	margin: 1em auto;
-	min-width: 480px;
-	width: 50vw;
+ 
 
-	 
+.items {
+  width: 1000px;
+  background: #fffffe;
+  box-shadow: 0 3px 6px rgba(black,0.16), 0 3px 6px rgba(black,0.23);
+  border-top: 10px solid #0B5AA2;
+}
+
+.items-head p{
+  padding: 5px 20px;
+  margin: 10px;
+  color: #0B5AA2;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.items-head hr {
+  width: 20%;
+  margin: 0px 30px;
+  border: 1px solid #0B5AA2;
+}
+
+.items-body {
+  padding: 10px;
+  margin: 10px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+@keyframes icon {
+  0%,100%{
+    transform: translate(0px);
+  }
+  50% {
+    transform: translate(3px);
+  }
 }
