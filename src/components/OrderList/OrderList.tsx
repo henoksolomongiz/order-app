@@ -1,8 +1,7 @@
 import React, { FC, useEffect } from "react";
 
 import { Order as OrderModel } from "../../model/Order";
-import { AddOrder } from "../AddOrder/AddOrder";
-import { Order } from "../Order/Order";
+import { OrderItem } from "../OrderItem/OrderItem";
 
 import "./OrderList.css";
 
@@ -22,7 +21,7 @@ const OrderList: FC<IOrderListProps> = ({ orders }) => {
         <React.Fragment>
           <div className="items-body">
             {orders.map((order, index) => (
-              <Order key={index} order={order} />
+              <OrderItem key={index} order={order} />
             ))}
           </div>
         </React.Fragment>

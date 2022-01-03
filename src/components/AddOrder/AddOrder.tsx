@@ -38,21 +38,24 @@ const AddOrder: FC<IAddOrderProps> = ({ addOrder, availableOrderTime }) => {
       customerId: "",
       date: Date.now().toString(),
       orderId: Math.random().toString(),
-      time: "",
+      time: order.time,
     });
   };
 
   return (
     <div className="order-form form-inline">
       <select
-        className="soflow"
+        defaultValue={""}
+        className="option"
         id="time"
         name="time"
         onChange={(evt) => {
           handleTime(evt);
         }}
       >
-        <option selected disabled>Select Time</option>
+        <option disabled value="">
+          Select Time
+        </option>
         {availableOrderTime.map((time, index) => (
           <option key={index} value={time}>
             {time}
@@ -69,8 +72,12 @@ const AddOrder: FC<IAddOrderProps> = ({ addOrder, availableOrderTime }) => {
         }}
         value={order.customerId}
       />
-      <button className="order-form--submit" onClick={handleClick}>
-        Add Order{" "}
+      <button
+        className="order-form--submit"
+        onClick={handleClick}
+        disabled={order.customerId.length < 1 || order.time.length < 1}
+      >
+        Add Order
       </button>
     </div>
   );

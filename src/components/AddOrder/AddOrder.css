@@ -39,9 +39,19 @@
   font-weight: 600;
   font-size: 18px;
 }
-
+button.order-form--submit[disabled]{
+  padding: 10px 30px;
+  background-color: #d6e4ee;
+  border: 1px solid #24111d;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  height: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+}
 .form-inline button:hover {
-  background-color: #66a4d6;
+  
 }
 
 @media (max-width: 1085px) {
@@ -58,8 +68,8 @@
   }
 }
 
-select.soflow,
-select.soflow-color {
+select.option,
+select.option-color {
   -webkit-appearance: button;
   -webkit-border-radius: 0px; 
   background-position: 97% center;
