@@ -1,11 +1,21 @@
-import { render } from "@testing-library/react";
+/* eslint-disable testing-library/prefer-screen-queries */
+ 
+import {  render } from "@testing-library/react";
 import { AddOrder } from "./AddOrder";
-
  
 
-test('renders add order', () => {
+it("should display no order on empty order", () => {
+
+    // Arrange
     const addOrder = jest.fn();
-    const {container} = render(<AddOrder addOrder= {addOrder}  availableOrderTime={["10:30", "12:30", "18:30"]} />)
-   
-   
-  })
+  // Act
+  const { getByText } =  render(<AddOrder
+    addOrder={addOrder}
+    availableOrderTime={["10:30", "12:30", "18:30"]}
+  />);
+
+  const element = getByText('Add Order');
+
+    // Assert
+    expect(element).toBeInTheDocument();
+});
